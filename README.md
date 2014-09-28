@@ -21,29 +21,29 @@
 
 # Using on Dcoker
 
-When you start container exposed port 5000, after open url http://localhost:5000/ from your browser.
+When you start container exposed port 9000, after open url http://localhost:9000/ from your browser.
 
 ## Default, SQLite3 in container.
 
-    docker run -d -p 5000:5000 yujiod/wiki
+    docker run -d -p 9000:9000 yujiod/wiki
     # same above
-    docker run -d -p 5000:5000 -e DB_DRIVER=sqlite3 -e DB_SOURCE="./wiki.db" jmcarbo/wiki
+    docker run -d -p 9000:9000 -e DB_DRIVER=sqlite3 -e DB_SOURCE="./wiki.db" jmcarbo/wiki
 
 ## Using MySQL
 
-    docker run -d -p 5000:5000 -e DB_DRIVER=mysql -e DB_SOURCE="dbuser:dbpass@tcp(hostname:3306)/dbname?charset=utf8" jmcarbo/wiki
+    docker run -d -p 9000:9000 -e DB_DRIVER=mysql -e DB_SOURCE="dbuser:dbpass@tcp(hostname:3306)/dbname?charset=utf8" jmcarbo/wiki
 
 The Data Source Name, see [Go-MySQL-Driver](https://github.com/go-sql-driver/mysql).
 
 ## Using PostgreSQL
 
-    docker run -d -p 5000:5000 -e DB_DRIVER=postgres -e DB_SOURCE="host=hostname user=dbuser dbname=dbpass sslmode=disable" yujiod/wiki
+    docker run -d -p 9000:9000 -e DB_DRIVER=postgres -e DB_SOURCE="host=hostname user=dbuser dbname=dbpass sslmode=disable" yujiod/wiki
 
 The Connection String Parameters, see [pq](https://github.com/lib/pq).
 
 ## To activate NewRelic monitoring
 
-    docker run -d -p 5000:5000 -e NEWRELIC_LICENSE=XXXXXXXXXX jmcarbo/wiki 
+    docker run -d -p 9000:9000 -e NEWRELIC_LICENSE=XXXXXXXXXX jmcarbo/wiki 
 
 # Using from source
 
