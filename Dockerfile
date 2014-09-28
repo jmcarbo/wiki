@@ -10,7 +10,7 @@ RUN revel build github.com/jmcarbo/wiki /usr/local/wiki
 ENV DB_DRIVER sqlite3
 ENV DB_SOURCE ./wiki.db
 
-EXPOSE 5000
+EXPOSE 9000
 
 WORKDIR /usr/local/wiki
 CMD []
