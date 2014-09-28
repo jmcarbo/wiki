@@ -31,7 +31,7 @@ func (c List) Index() revel.Result {
 
 	query := c.Params.Get("query")
 	if query != "" {
-		db = db.Where("title like ?", "%"+query+"%")
+		db = db.Where("title like ? or body like ?", "%"+query+"%", "%"+query+"%")
 	}
 
 	db.Order(order).Limit(limit).Offset(limit * (paginateCurrent - 1)).Find(&pages)
